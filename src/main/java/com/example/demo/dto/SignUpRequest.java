@@ -6,14 +6,17 @@ public class SignUpRequest {
     private String email;
     private String password;
 
+    private Boolean isAdmin;
+
     public SignUpRequest() {
     }
 
-    public SignUpRequest(String firstName, String lastName, String email, String password) {
+    public SignUpRequest(String firstName, String lastName, String email, String password, Boolean isAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
 
     public String getFirstName() {
@@ -46,5 +49,13 @@ public class SignUpRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 }

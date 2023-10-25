@@ -38,6 +38,10 @@ public class AuthenticationService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setRole(Role.USER);
 
+        if (request.getAdmin()) {
+            user.setRole(Role.ADMIN);
+        }
+
         userRepository.save(user);
         var jwt = jwtService.generateToken(user);
 
